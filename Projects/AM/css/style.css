@@ -1,0 +1,15 @@
+#loginContent{
+  min-height: 100%; 
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  margin:0;
+}
+
+.loginForm{
+	margin:15px;
+}
+
+#subjectContent{
+	margin-top:50px;
+}

@@ -1,0 +1,297 @@
+<!-- Created BY : Nishit Mehta
+ Date : 17/March/2017 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+  	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  	<script type="text/javascript" src='js/gpascript.js'></script>
+ 	<title>AM - GPA Calculator</title>
+ 	<style type="text/css">
+ 		#td{
+ 	 		padding: 6px;
+		}	
+		table{
+			margin-top: 60px;
+			box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1), 0 2px 2px 0 rgba(0,0,0,0.1);
+		}
+		#addcourse,#calcdown,#subcourse{
+			box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);
+		}
+		#result{
+			float: center;
+			/*margin: 10px;*/
+		}
+ 	</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-toggleable-md navbar-light bg-inverse">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Attendance Manager</a>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="gpacalc.php">GPA Calculator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Get one for my School as well.</a>
+          </li>
+        </ul>
+    </div>
+  </nav>
+		
+<!-- GPA CALCULATOR STARTS HERE -->
+		<!-- <form class="form row"> -->
+			<table id="gpatable" class="table col-md-8 offset-md-2">
+			  <thead class="bg-faded">	
+			    <tr>
+			      <th>#</th>
+			      <th width="370px">Course Name</th>
+			      <th>Credits</th>
+			      <th>Grades</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row" id="one" value="1">1</th>
+			      <td class="td"><input type="text" name="subname" class="form-control col-md-8"></td>
+				  <td class="td">
+					  <select id="select_credit" class="custom-select">
+					  	<option selected value="0">-</option>
+					  	<option value="1">1.00</option>
+					  	<option value="2">2.00</option>
+					  	<option value="3">3.00</option>
+					  	<option value="4">4.00</option>
+					  </select>
+				  </td>
+				  <td class="td">
+					  <select id="select_grades" class="custom-select">
+					  	<option selected value="0">-</option>
+						<option value="4">A+</option>
+						<option value="3.75">A</option>
+						<option value="3.5">A-</option>
+						<option value="3.25">B+</option>
+						<option value="3">B</option>
+						<option value="2.75">B-</option>
+						<option value="2.5">C+</option>
+						<option value="2.25">C</option>
+						<option value="2">C-</option>
+						<option value="0">F</option>
+					</select>
+				</td>
+			    </tr>
+			    <tr>
+			      <th scope="row" id="two" value="2">2</th>
+			      <td class="td"><input type="text" name="subname" class="form-control col-md-8"></td>
+				  <td class="td">
+					  <select id="select_credit2" class="custom-select">
+					  	<option selected value="0">-</option>
+					  	<option value="1" value="1">1.00</option>
+					  	<option value="2">2.00</option>
+					  	<option value="3">3.00</option>
+					  	<option value="4">4.00</option>
+					  </select>
+				  </td>
+				  <td class="td">
+					  <select id="select_grades2" class="custom-select">
+					  	<option selected value="0">-</option>
+						<option value="4">A+</option>
+						<option value="3.75">A</option>
+						<option value="3.5">A-</option>
+						<option value="3.25">B+</option>
+						<option value="3">B</option>
+						<option value="2.75">B-</option>
+						<option value="2.5">C+</option>
+						<option value="2.25">C</option>
+						<option value="2">C-</option>
+						<option value="0">F</option>
+					</select>
+					</td>
+			    </tr>
+			    <tr>
+			      <th scope="row" id="two" value="2">3</th>
+			      <td class="td"><input type="text" name="subname" class="form-control col-md-8"></td>
+				  <td class="td">
+					  <select id="select_credit3" class="custom-select">
+					  	<option selected value="0">-</option>
+					  	<option value="1" value="1">1.00</option>
+					  	<option value="2">2.00</option>
+					  	<option value="3">3.00</option>
+					  	<option value="4">4.00</option>
+					  </select>
+				  </td>
+				  <td class="td">
+					  <select id="select_grades3" class="custom-select">
+					  	<option selected value="0">-</option>
+						<option value="4">A+</option>
+						<option value="3.75">A</option>
+						<option value="3.5">A-</option>
+						<option value="3.25">B+</option>
+						<option value="3">B</option>
+						<option value="2.75">B-</option>
+						<option value="2.5">C+</option>
+						<option value="2.25">C</option>
+						<option value="2">C-</option>
+						<option value="0">F</option>
+					</select>
+					</td>
+			    </tr>
+			    <tr>
+			      <th scope="row" id="two" value="2">4</th>
+			      <td class="td"><input type="text" name="subname" class="form-control col-md-8"></td>
+				  <td class="td">
+					  <select id="select_credit4" class="custom-select">
+					  	<option selected value="0">-</option>
+					  	<option value="1" value="1">1.00</option>
+					  	<option value="2">2.00</option>
+					  	<option value="3">3.00</option>
+					  	<option value="4">4.00</option>
+					  </select>
+				  </td>
+				  <td class="td">
+					  <select id="select_grades4" class="custom-select">
+					  	<option selected value="0">-</option>
+						<option value="4">A+</option>
+						<option value="3.75">A</option>
+						<option value="3.5">A-</option>
+						<option value="3.25">B+</option>
+						<option value="3">B</option>
+						<option value="2.75">B-</option>
+						<option value="2.5">C+</option>
+						<option value="2.25">C</option>
+						<option value="2">C-</option>
+						<option value="0">F</option>
+					</select>
+					</td>
+			    </tr>
+			    <tr>
+			      <th scope="row" id="two" value="2">5</th>
+			      <td class="td"><input type="text" name="subname" class="form-control col-md-8"></td>
+				  <td class="td">
+					  <select id="select_credit5" class="custom-select">
+					  	<option selected value="0">-</option>
+					  	<option value="1" value="1">1.00</option>
+					  	<option value="2">2.00</option>
+					  	<option value="3">3.00</option>
+					  	<option value="4">4.00</option>
+					  </select>
+				  </td>
+				  <td class="td">
+					  <select id="select_grades5" class="custom-select">
+					  	<option selected value="0">-</option>
+						<option value="4">A+</option>
+						<option value="3.75">A</option>
+						<option value="3.5">A-</option>
+						<option value="3.25">B+</option>
+						<option value="3">B</option>
+						<option value="2.75">B-</option>
+						<option value="2.5">C+</option>
+						<option value="2.25">C</option>
+						<option value="2">C-</option>
+						<option value="0">F</option>
+					</select>
+					</td>
+			    </tr>
+			    <tr>
+			      <th scope="row" id="two" value="2">6</th>
+			      <td class="td"><input type="text" name="subname" class="form-control col-md-8"></td>
+				  <td class="td">
+					  <select id="select_credit6" class="custom-select">
+					  	<option selected value="0">-</option>
+					  	<option value="1" value="1">1.00</option>
+					  	<option value="2">2.00</option>
+					  	<option value="3">3.00</option>
+					  	<option value="4">4.00</option>
+					  </select>
+				  </td>
+				  <td class="td">
+					  <select id="select_grades6" class="custom-select">
+					  	<option selected value="0">-</option>
+						<option value="4">A+</option>
+						<option value="3.75">A</option>
+						<option value="3.5">A-</option>
+						<option value="3.25">B+</option>
+						<option value="3">B</option>
+						<option value="2.75">B-</option>
+						<option value="2.5">C+</option>
+						<option value="2.25">C</option>
+						<option value="2">C-</option>
+						<option value="0">F</option>
+					</select>
+					</td>
+			    </tr>
+			  </tbody>
+		</table>
+		<div class=" row col-md-8 offset-md-2" style="padding:0;">
+			<button title="Add course" type="button" onclick="addrow();" class="btn btn-secondary col-md-1 col-sm-5 col-xs-12" id="addcourse" name="addcourse"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<button title="Remove course" type="button" onclick="subrow();" class="btn btn-secondary col-md-1 col-sm-5 col-xs-12" id="subcourse" name="addcourse"><i class="fa fa-minus" aria-hidden="true"></i></button>
+			<!-- <button type="button" class="btn btn-secondary col-md-3 col-sm-5 col-xs-12" id="calcdown" name="addcourse">Calculate &amp; Download&nbsp; <i class="fa fa-download" aria-hidden="true"></i></button> -->
+			<button type="button" class="btn btn-primary col-md-3 offset-md-7 col-sm-8 offset-sm-0 col-xs-12" onclick="calculate();" id="calc" name="clculate">Calculate&nbsp;&nbsp;<i class="fa fa-calculator" aria-hidden="true"></i></button>
+		</div>
+	<!-- </form> -->
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Your GPA</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        	<div id="result"></div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+</body>
+
+<script type="text/javascript">
+	function calculate(){
+	var multiplyadd1=multiplyadd();
+	var gpa=multiplyadd1;
+	document.getElementById('result').innerHTML='GPA : '+gpa;
+	$("#myModal").modal();
+	// alert(gpa);
+}
+
+function multiplyadd() {
+	var sum1=0,sum2=0;
+	var answer=0,answer1=0,j=0;
+	var dd = document.getElementsByClassName('custom-select'); //this will get elements with class custom-select
+	for (var i = 0; i < dd.length - 1; i = i + 2) {
+      if (!isNaN(dd[i].options[dd[i].selectedIndex].value) && !isNaN(dd[i + 1].options[dd[i + 1].selectedIndex].value)) {
+	        sum1 += dd[i].options[dd[i].selectedIndex].value * dd[i + 1].options[dd[i + 1].selectedIndex].value;
+	        sum2 += dd[i].options[dd[i].selectedIndex].value*1;
+	      } else {
+	      	alert("ERR: Please select all values");
+	        i = dd.length; // break loop
+	        sum1 = 0; // in case of error
+	        sum2 = 0;
+	      }
+	}
+
+	// alert(sum1 + "   "+sum2);
+	return (sum1/sum2);
+}
+</script>
+  	<script src="js/jquery.min.js"></script>
+  	<script src="js/teather.min.js"></script>
+  	<script src="js/bootstrap.min.js"></script>
+
+</html>
